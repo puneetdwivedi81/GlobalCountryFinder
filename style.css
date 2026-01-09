@@ -1,0 +1,292 @@
+/* Reset & General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+body {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light/Dark Mode */
+.dark {
+    --backgroundColor: #202c36;
+    --headerColor: #2b3844;
+    --textColor: #ffffff;
+}
+
+.light {
+    --backgroundColor: #e8f1f0;
+    --headerColor: #f0f5f4;
+    --textColor: #000000;
+}
+
+/* Header */
+header {
+    width: 100%;
+    max-width: 1300px;
+    height: 70px;
+    background-color: var(--headerColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header .changemode {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+/* Main Section */
+.main-section {
+    margin: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    max-width: 1300px;
+}
+
+.input {
+    height: 45px;
+    width: 300px;
+    background-color: var(--headerColor);
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.input input {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    margin-left: 8px;
+    font-size: 18px;
+    color: var(--textColor);
+    width: 100%;
+}
+
+/* Filter */
+.filter {
+    width: 180px;
+    background-color: var(--headerColor);
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.subfilter {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.fa-sort-down {
+    transform: rotate(90deg);
+}
+
+.filterlist {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--headerColor);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.filterlist li {
+    list-style: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filterlist li:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Cards Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1300px;
+}
+
+/* Card */
+.card {
+    width: 23%;
+    background-color: var(--headerColor);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card div {
+    width: 100%;
+    height: 150px;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 15px 5px;
+}
+
+.card p {
+    font-weight: 700;
+    margin: 5px 15px;
+}
+
+.card p span {
+    font-weight: 400;
+}
+
+/* Pagination */
+#pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#pagination button {
+    background-color: orange;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 20px;
+    transition: transform 0.2s;
+}
+
+#pagination button:hover {
+    transform: scale(1.05);
+}
+
+/* Top arrow */
+.toparrow {
+    position: fixed;
+    bottom: 5%;
+    right: 10px;
+    height: 35px;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.toparrow:hover {
+    opacity: 1;
+}
+
+/* Responsive */
+@media screen and (max-width: 868px) {
+    .card {
+        width: 31%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .changemode span {
+        display: none;
+    }
+
+    .changemode i {
+        font-size: 30px;
+    }
+
+    .main-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 100px;
+    }
+
+    .input {
+        width: 75%;
+    }
+
+    .filter {
+        position: absolute;
+        right: 15px;
+        top: 65px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .card {
+        width: 70%;
+    }
+
+    .input {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .card {
+        width: 90%;
+    }
+}
