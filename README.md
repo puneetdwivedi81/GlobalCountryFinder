@@ -12,6 +12,7 @@ A web app to search and filter countries using REST API.
 - REST API
 
 ## 🔗 Live Demo
-https://globalcountryfinder.netlify.app
+https://euphonious-biscochitos-d54db2.netlify.app/
+
 
 
